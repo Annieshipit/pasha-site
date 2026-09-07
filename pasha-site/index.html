@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#eee9df" />
+    <title>Небольшой подарок</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="gift-card" aria-labelledby="name">
+      <div class="grain" aria-hidden="true"></div>
+      <p class="eyebrow">небольшое послесловие</p>
+
+      <section class="copy">
+        <p class="prelude">Для человека, с которым<br />было <em>по пути.</em></p>
+        <h1 id="name">Паша</h1>
+        <p class="message">«Я скоро ухожу. Но кое-что решила тебе оставить.»</p>
+
+        <div class="actions" aria-label="Сюрпризы">
+          <button class="button button--quiet" type="button" data-action="warning">Не нажимать <span>↗</span></button>
+          <button class="button button--main" type="button" data-action="secret">Открыть секрет <span>→</span></button>
+          <button class="button button--quiet" type="button" data-action="last">Последняя кнопка <span>↗</span></button>
+          <button class="button button--game" type="button" data-game-open>🎮 Поиграть <span>→</span></button>
+        </div>
+      </section>
+
+      <figure class="portrait-wrap">
+        <div class="portrait">
+          <img src="photo.jpg" alt="Портрет Паши" />
+          <div class="portrait-placeholder" aria-hidden="true"><span>photo.jpg</span></div>
+        </div>
+        <figcaption>кадр для хорошего человека</figcaption>
+      </figure>
+
+      <p class="footer-note">Сохрани на случай особенно длинного созвона.</p>
+      <section class="reaction" aria-live="polite" aria-atomic="true"></section>
+    </main>
+
+    <section class="game-modal" aria-label="Мини-игра про Пашу" aria-modal="true" role="dialog" hidden>
+      <div class="game-shell">
+        <button class="game-back" type="button" data-game-close>← Вернуться на сайт</button>
+        <div class="game-intro">
+          <p class="game-kicker">Мини-игра</p>
+          <h2>Маршрут Паши</h2>
+          <p>Помоги Паше добраться до офиса и не застрять в задачах, дедлайнах и созвонах.</p>
+          <button class="game-start" type="button" data-game-start>НАЧАТЬ ИГРУ <span>→</span></button>
+        </div>
+
+        <div class="game-play" hidden>
+          <p class="game-hint">Прыжок: пробел, клик или тап</p>
+          <div class="game-world" data-game-world>
+            <div class="game-sun" aria-hidden="true"></div>
+            <div class="game-horizon" aria-hidden="true"></div>
+            <div class="game-ground" aria-hidden="true"></div>
+            <div class="pasha-runner" data-runner aria-label="Паша">
+              <span class="runner-label">Паша</span>
+              <span class="runner-head"></span><span class="runner-body"></span><span class="runner-arm"></span><span class="runner-leg runner-leg--one"></span><span class="runner-leg runner-leg--two"></span>
+            </div>
+            <div class="game-obstacles" data-obstacles></div>
+            <div class="office" data-office aria-hidden="true"><span class="office-icon">🏢</span><span class="office-door"></span></div>
+          </div>
+          <div class="game-result" data-game-result aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+    <script src="script.js"></script>
+  </body>
+</html>
